@@ -35,10 +35,10 @@ export const TodoItem: React.FC<Props> = props => {
         ×
       </button>
 
-      {/* <div data-cy="TodoLoader" className="modal overlay">
+      <div data-cy="TodoLoader" className="modal overlay">
         <div className="modal-background has-background-white-ter" />
         <div className="loader" />
-      </div> */}
+      </div>
     </div>
   );
 };
