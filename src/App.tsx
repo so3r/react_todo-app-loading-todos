@@ -15,7 +15,6 @@ import { ErrorType } from './types/ErrorType';
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [errorTodos, setErrorTodos] = useState<ErrorType>(ErrorType.Empty);
-  const [isloadingTodos, setIsLoadingTodos] = useState(false);
   const [currentFilter, setCurrentFilter] = useState<Filters>(Filters.All);
 
   useEffect(() => {
@@ -25,9 +24,6 @@ export const App: React.FC = () => {
       })
       .catch(() => {
         setErrorTodos(ErrorType.LoadTodo);
-      })
-      .finally(() => {
-        setIsLoadingTodos(false);
       });
   }, []);
 
@@ -51,11 +47,7 @@ export const App: React.FC = () => {
           <>
             <section className="todoapp__main" data-cy="TodoList">
               {filtered.map(todo => (
-                <TodoItem
-                  key={todo.id}
-                  todo={todo}
-                  isloadingTodos={isloadingTodos}
-                />
+                <TodoItem key={todo.id} todo={todo} />
               ))}
             </section>
             <TodoFooter

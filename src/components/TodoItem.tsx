@@ -5,7 +5,6 @@ import cn from 'classnames';
 
 type Props = {
   todo: Todo;
-  isloadingTodos: boolean;
 };
 
 export const TodoItem: React.FC<Props> = props => {

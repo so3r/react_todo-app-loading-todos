@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import cn from 'classnames';
 import { ErrorType } from '../types/ErrorType';
 type Props = {
-  error: string;
+  error: ErrorType;
   setError: Dispatch<SetStateAction<ErrorType>>;
 };
 
